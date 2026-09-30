@@ -3,6 +3,7 @@ class ShoppingList
 {
     private List<Item> items = new List<Item>();
     private string path;
+    // Constructor that needs an object.
 
     public ShoppingList(string path)
     {
@@ -72,7 +73,7 @@ class ShoppingList
             File.WriteAllText(path, string.Join("\r\n", lines) + "\r\n");
         }
         catch
-        {
+        { //one fault here
         }
 
         Console.WriteLine("Listan är sparad.");

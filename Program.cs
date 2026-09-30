@@ -1,8 +1,9 @@
-ShoppingList list = new ShoppingList("items.txt");
+ShoppingList list = new ShoppingList("items.txt"); //
 list.Load();
 
 while (true)
 {
+    // A menu gets printed out which displays the options to the user. While the bool is true.
     Console.WriteLine();
     list.Print();
     Console.WriteLine();
@@ -13,9 +14,9 @@ while (true)
     Console.WriteLine("5. Avsluta");
     Console.Write("Välj: ");
 
-    int choice = int.Parse(Console.ReadLine());
+    int choice = int.Parse(Console.ReadLine()); // int.Parse converts the string to an integer
 
-    if (choice == 1)
+    if (choice == 1) // If the choice is 1, The person gets to add
     {
         Console.Write("Namn: ");
         string name = Console.ReadLine();
@@ -23,7 +24,7 @@ while (true)
         int price = int.Parse(Console.ReadLine());
         list.Add(new Item(name, price));
     }
-    else if (choice == 2)
+    else if (choice == 2) 
     {
         Console.Write("Nummer: ");
         int number = int.Parse(Console.ReadLine());
