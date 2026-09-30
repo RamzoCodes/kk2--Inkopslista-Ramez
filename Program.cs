@@ -26,7 +26,11 @@ while (true)
         Console.Write("Namn: ");
         string name = Console.ReadLine();
         Console.Write("Pris: ");
-        int price = int.Parse(Console.ReadLine());
+        int price;
+        while(!int.TryParse(Console.ReadLine(), out price)|| price < 0) //
+        {
+            Console.WriteLine("Ange ett heltal");
+        }
         list.Add(new Item(name, price));
     }
     else if (choice == 2) 
