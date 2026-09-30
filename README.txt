@@ -8,3 +8,7 @@ Orsaken var att textfilen alltid sparades med en extra tom rad längst ner pga s
 
 lösning;
 Jag löste detta genom att ta bort File.ReadAllText() och Split('\n') och lade istället till "string[] lines = File.ReadAllLines(path);" Denna meod är säkrare, läser filen rad för rad och hanterar radbrytningarna automatiskt.
+
+3. Program.cs
+När programmet bad om en siffra, och jag angav en siffra mindre än 1 eller högre än 5, eller när jag angav bokstäver istället för heltal, kraschade programmet och jag fick "Unhandled exception. System.FormatException". 
+för att fixa detta, tog jag bort int.parse och lade till en while loop som fortsätter om man anger fel val tills man anger rätt.

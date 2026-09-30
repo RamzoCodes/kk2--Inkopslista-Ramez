@@ -14,7 +14,12 @@ while (true)
     Console.WriteLine("5. Avsluta");
     Console.Write("Välj: ");
 
-    int choice = int.Parse(Console.ReadLine()); // int.Parse converts the string to an integer
+    int choice;
+
+    while(!int.TryParse(Console.ReadLine(), out choice) ||choice<1||choice>5)
+    {
+        Console.Write("Välj ett val från menyn eller ange ett heltal!\nVälj:");
+    }
 
     if (choice == 1) // If the choice is 1, The person gets to add
     {
