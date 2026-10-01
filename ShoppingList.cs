@@ -31,7 +31,7 @@ class ShoppingList
     {
         int sum = 0;
 
-        for (int i = 1; i < items.Count; i++)
+        for (int i = 0; i < items.Count; i++) // changed int i = 1 to 0 so that  the first item could be visible in the price sum.
         {
             sum += items[i].Price;
         }

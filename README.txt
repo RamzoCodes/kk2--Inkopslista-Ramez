@@ -25,3 +25,5 @@ För att åtgärda detta gjorde jag tbå saker, först inom ShoppingList.cs så 
 } vilket gjorde att programmet skulle kunna läsa exakt hur många varor som fanns i listen just nu.
 
 Sedan bytte jag int.Parse mot en while-loop med int.tryparse, och i loopens villkor lade jag även till gränskontroller (number < 1 || number > list.Count). Nu kontrollerar programmet att inmatningen är ett heltal, och ryms inom listans gränser. Den kraschar inte längre om jag anger fel inmatning, utan ber mig att försöka igen.
+
+6. Jag ansåg att första varan inte räknades med i summan. för att fixa detta så bytte jag for (int i = 1; i < items.Count; i++) till for (int i = 0; i < items.Count; i++). alltså jag ändrade i=1 till i=0
