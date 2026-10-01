@@ -44,7 +44,7 @@ class ShoppingList
     {
         foreach (Item item in items)
         {
-            if (item.Name == name)
+            if (item.Name.ToLower() == name.ToLower()) //added a ToLower so that the item's name can be searched up without having to capitalize the letters, and vice versa.
             {
                 return item;
             }

@@ -27,3 +27,5 @@ För att åtgärda detta gjorde jag tbå saker, först inom ShoppingList.cs så 
 Sedan bytte jag int.Parse mot en while-loop med int.tryparse, och i loopens villkor lade jag även till gränskontroller (number < 1 || number > list.Count). Nu kontrollerar programmet att inmatningen är ett heltal, och ryms inom listans gränser. Den kraschar inte längre om jag anger fel inmatning, utan ber mig att försöka igen.
 
 6. Jag ansåg att första varan inte räknades med i summan. för att fixa detta så bytte jag for (int i = 1; i < items.Count; i++) till for (int i = 0; i < items.Count; i++). alltså jag ändrade i=1 till i=0
+
+7. När jag sökte varan med små bokstäver, hittade inte programmet varan trots att den fanns (med en stor bokstav i början). Jag fixade det genom att lägga till .ToLower i if (item.Name == name) på båda sidorna. Nu kan jag mata in med både stora och små bokstäver och programmet kommer ändå hitta varan till mig.
