@@ -87,6 +87,10 @@ class ShoppingList
     // Reads the file back into the list.
     public void Load()
     {
+        if (!File.Exists(path)) //added an if-statement which tells the program to return in case items.txt doesn't exist. This prevents the program from crashing and instead runs with an empty list.
+        {
+            return;
+        }
         string[] lines = File.ReadAllLines(path);
 
 

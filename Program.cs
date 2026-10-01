@@ -1,4 +1,4 @@
-ShoppingList list = new ShoppingList("items.txt"); //
+ShoppingList list = new ShoppingList("items.txt"); 
 list.Load();
 
 while (true)
