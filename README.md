@@ -1,7 +1,7 @@
 Jag ska undersöka, dokumentera och förklara och rätta fel som ingår i koden
 
 ## 1. 
-Catch is empty shoppinglist.cs
+Catch är tomt i shoppinglist, vilket orsakade att den inte fångade upp när listan inte sparades som önskat. Jag lade till (IOException) i den, vilket är en errorkod som förklarar vad problemet är, samt ett Console.Writeline() felmeddelande som har meddelat att listan inte kunde sparas. Jag använde mig av IOException för att den var det mest övergripande undantaget för denna specifika problemet, enligt google.
 
 ## 2. 
 shoppinglist.cs
@@ -40,3 +40,4 @@ När jag sökte varan med små bokstäver, hittade inte programmet varan trots a
 ## 8. 
 Ett krav för att få godkänt var att kunna köra programmet utan items.txt utan att programmet kraschar. 
 För att lösa detta lade jag till "if (!File.Exists(path)){ return;}" i början av load-metoden. Nu kollar programmet om items.txt existerar, om den inte finns, försöker inte programmet läsa in på textfilen pga return, och istället kör den med en tom lista.
+

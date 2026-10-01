@@ -77,8 +77,10 @@ class ShoppingList
         {
             File.WriteAllText(path, string.Join("\r\n", lines) + "\r\n");
         }
-        catch
-        { //one fault here
+        catch (IOException) //added an error message just in case the program can't save the list. The catch was empty before, but now it has both the IOException and a message in swedish that informs the user about the problem.
+        {
+            Console.WriteLine("Kunde inte spara listan.");
+            return;
         }
 
         Console.WriteLine("Listan är sparad.");
