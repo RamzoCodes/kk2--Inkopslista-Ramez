@@ -18,3 +18,10 @@ Programmet kraschade när jag skrev in bokstäver istället för priset på en n
 
 lösning: Jag tog bort int.parse och lade istället till int.tryparse() inuti en while loop. Koden verifierar nu att inmatningen är ett heltal. jag lade även till ('price<0'), vilket är ett vilkor att priset måste vara 0 eller högre. pga att det är en while loop, tvingas man lägga till korrekt inmatning.
 
+5. När jag valde att ta bort en vara, kraschade systemet om jag matade in text istället för siffror eller nummer som inte fanns på listan, t.ex siffror mindre än 1 eller mer än antalet varor vi faktiskt hade.
+
+För att åtgärda detta gjorde jag tbå saker, först inom ShoppingList.cs så skrev jag public int Count 
+{ get { return items.Count; } 
+} vilket gjorde att programmet skulle kunna läsa exakt hur många varor som fanns i listen just nu.
+
+Sedan bytte jag int.Parse mot en while-loop med int.tryparse, och i loopens villkor lade jag även till gränskontroller (number < 1 || number > list.Count). Nu kontrollerar programmet att inmatningen är ett heltal, och ryms inom listans gränser. Den kraschar inte längre om jag anger fel inmatning, utan ber mig att försöka igen.

@@ -21,6 +21,11 @@ class ShoppingList
         items.RemoveAt(number - 1);
     }
 
+    public int Count
+    {
+        get { return items.Count; } //säkerställer att numret finns på varan som vi vill ta bort.
+        
+    }
     // Adds up the price of every item on the list.
     public int Total()
     {

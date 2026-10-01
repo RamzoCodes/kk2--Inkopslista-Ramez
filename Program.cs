@@ -27,7 +27,7 @@ while (true)
         string name = Console.ReadLine();
         Console.Write("Pris: ");
         int price;
-        while(!int.TryParse(Console.ReadLine(), out price)|| price < 0) //
+        while(!int.TryParse(Console.ReadLine(), out price)|| price < 0)
         {
             Console.WriteLine("Ange ett heltal");
         }
@@ -36,7 +36,12 @@ while (true)
     else if (choice == 2) 
     {
         Console.Write("Nummer: ");
-        int number = int.Parse(Console.ReadLine());
+
+        int number;
+        while(!int.TryParse(Console.ReadLine(),out number) || number <1||number >list.Count) // Loops and repeats the question if the number is smaller than 1 or greater than the amount of things on the list.
+        {
+            Console.Write("Ange nummer av varan du vill ta bort.\nNummer");
+        }
         list.RemoveAt(number);
     }
     else if (choice == 3)
