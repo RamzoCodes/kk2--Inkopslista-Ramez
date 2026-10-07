@@ -8,6 +8,16 @@ class Item
 
     public Item(string name, int price)
     {
+        if(string.IsNullOrWhiteSpace(name))
+    {
+        throw new ArgumentException("Namnet kan inte vara tomt!");
+    }
+
+if(price < 0)
+        {
+            throw new ArgumentOutOfRangeException("Priset kan inte vara negativt!");
+        }
+        
         Name = name;
         Price = price;
     }

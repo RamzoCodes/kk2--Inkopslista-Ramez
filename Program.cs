@@ -27,7 +27,7 @@ while (true)
         string name = Console.ReadLine();
         Console.Write("Pris: ");
         int price;
-        while(!int.TryParse(Console.ReadLine(), out price)|| price < 0)
+        while(!int.TryParse(Console.ReadLine(), out price))
         {
             Console.WriteLine("Ange ett heltal");
         }
