@@ -31,7 +31,19 @@ while (true)
         {
             Console.WriteLine("Ange ett heltal");
         }
-        list.Add(new Item(name, price));
+       try
+        {
+            list.Add(new Item(name, price));  //Adds the name and price to the list
+            Console.WriteLine($"{name} Har lagts till i listan.");
+        }
+       catch (ArgumentOutOfRangeException) //Catches the negative price and throws an exception
+        {
+            Console.WriteLine("Felmeddelande: Priset kan inte vara negativt och därför har varan ej lagts till.");
+        }
+        catch (ArgumentException tomnamn) //Catches the empty name field and also throws an exception
+        {
+            Console.WriteLine($"Felmeddelande {tomnamn.Message}");
+        }
     }
     else if (choice == 2) 
     {
