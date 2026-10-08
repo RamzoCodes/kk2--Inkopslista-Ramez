@@ -1,6 +1,7 @@
 // Holds the items and takes care of loading and saving them.
 class ShoppingList
 {
+    private int budgetMaximum = 500; // this will be the max budget for our groceries
     private List<Item> items = new List<Item>();
     private string path;
     // Constructor that needs an object.
@@ -12,7 +13,15 @@ class ShoppingList
 
     public void Add(Item item)
     {
-        items.Add(item);
+        if (Total() + item.Price > budgetMaximum) //gives an error message if budget is exceeded.
+        {
+            throw new InvalidOperationException($"Totalsumman överstiger budgeten!");
+        }
+        else
+
+        {
+            items.Add(item);
+        }
     }
 
     // Removes the item the user sees as number 1, 2, 3 ...
