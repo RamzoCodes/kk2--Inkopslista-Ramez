@@ -44,6 +44,10 @@ while (true)
         {
             Console.WriteLine($"Felmeddelande {tomnamn.Message}");
         }
+        catch (InvalidOperationException overskridenBudget) //catches the exceeded budget.
+        {
+            Console.WriteLine($"Felmeddelande {overskridenBudget.Message}"); 
+        }
     }
     else if (choice == 2) 
     {
