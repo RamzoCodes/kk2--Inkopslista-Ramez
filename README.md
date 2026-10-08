@@ -47,3 +47,6 @@ Jag valde att låta Add-metoden kasta ett undantag (InvalidOperationException) i
 Detta gjorde jag för att ett undantag ger en mycket högre säkerhet i programmet, eftersom programmet tvingas att hantera felet i en try-catch istället för att felet bara göms från användaren. 
 
 Dessutom gav det mig mer flexibilitet att utforma felmeddelandet precis som jag ville, vilket var ett roligt sätt för mig att bygga upp mitt självförtroende kring att kasta och hantera exceptions, samt utvidga min kreativitet.
+
+## Klassdiagram
+![Mitt klassdiagram](Klassdiagram.png)
